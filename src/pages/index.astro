@@ -1,12 +1,18 @@
 ---
-import Header from "../components/Header.astro"
-import Profile from "../components/Profile.astro"
-import Layout from "../layouts/Layout.astro"
+import Header from "../components/Header.astro";
+import Profile from "../components/Profile.astro";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import TimeLine from "../components/TimeLine.astro";
 ---
 
 <Layout title="Dylan Gonzalez | Portfolio">
   <Header />
-  <main class="mt-32">
+
+  <main>
     <Profile />
   </main>
+  <Section title="Experiencia">
+    <TimeLine />
+  </Section>
 </Layout>

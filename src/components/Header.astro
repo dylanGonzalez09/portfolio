@@ -1,21 +1,23 @@
 ---
-import Logo from "./Logo.astro"
+import Logo from "./Logo.astro";
 ---
 
 <nav
-  class="bg-slate-900/45 backdrop-blur-md p-3 rounded-full fixed left-1/2 transform -translate-x-1/2 text-white flex gap-24 top-8"
+  class="bg-slate-900/45 backdrop-blur-md p-3 rounded-xl md:rounded-full fixed left-1/2 transform -translate-x-1/2 text-white flex flex-col md:flex-row items-center justify-center top-8 w-11/12 md:w-[60%] md:max-w-xl overflow-hidden z-50"
 >
   <Logo />
 
-  <ul class="flex justify-center items-center gap-10">
-    <li class="transform transition duration-300 hover:scale-110">
-      <a href="#">Experiencia</a>
+  <ul
+    class="md:mr-2 flex flex-row justify-center items-center gap-2 md:gap-10 text-center"
+  >
+    <li class="transform transition duration-300 hover:scale-110 w-full">
+      <a href="#experience" class="md:text-xl">Experiencia</a>
     </li>
-    <li class="transform transition duration-300 hover:scale-110">
-      <a href="#">Proyectos</a>
+    <li class="transform transition duration-300 hover:scale-110 w-full">
+      <a href="#projects" class="md:text-xl">Proyectos</a>
     </li>
-    <li class="transform transition duration-300 hover:scale-110">
-      <a href="#">Contacto</a>
+    <li class="transform transition duration-300 hover:scale-110 w-full">
+      <a href="#contact" class="md:text-xl">Contacto</a>
     </li>
   </ul>
 </nav>
