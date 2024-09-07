@@ -4,15 +4,36 @@ import Profile from "../components/Profile.astro";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import TimeLine from "../components/TimeLine.astro";
+import Project from "../components/Project.astro";
+import Stack from "../components/Stack.astro";
+
+import { projects } from "../data/projects.astro";
 ---
 
 <Layout title="Dylan Gonzalez | Portfolio">
   <Header />
 
-  <main>
+  <main class="mt-16 md:mt-0">
     <Profile />
   </main>
-  <Section title="Experiencia">
+  <Section title="Experiencia" id="experience">
     <TimeLine />
+  </Section>
+
+  <Section title="Proyectos" id="projects">
+    {
+      projects.map((project, i) => (
+        <Project
+          side={i % 2 === 0 ? "left" : "right"}
+          title={project.title}
+          description={project.description}
+          image={project.image}
+        />
+      ))
+    }
+  </Section>
+
+  <Section title="Tecnologías" id="stack">
+    <Stack />
   </Section>
 </Layout>

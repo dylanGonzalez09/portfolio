@@ -1,4 +1,14 @@
-<span
-  class="mb-2 md:mb-0 w-full text-center md:text-start md:ml-2 transform transition duration-300 hover:scale-110 hover:cursor-pointer text-xl"
-  ><code class="font-bold">&lt;y/&gt;</code></span
+---
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<a
+  href="/#"
+  class={`${classes} transform transition duration-300 hover:scale-110 mb-2 md:mb-0 text-center md:text-start md:ml-2 hover:cursor-pointer text-xl`}
 >
+  <code class="font-bold">&lt;y/&gt;</code>
+</a>

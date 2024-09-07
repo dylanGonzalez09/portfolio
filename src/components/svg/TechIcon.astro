@@ -1,0 +1,13 @@
+---
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<div
+  class={`${classes} flex justify-center items-center bg-slate-900 w-12 h-12 absolute rounded-full ring-2 ring-purple-700 shadow-2xl shadow-purple-700`}
+>
+  <slot />
+</div>

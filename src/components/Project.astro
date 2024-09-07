@@ -1,0 +1,41 @@
+---
+interface Props {
+  side?: "left" | "right";
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
+}
+
+const { side, title, description, image, link } = Astro.props;
+---
+
+<div
+  class={`w-full flex flex-col ${side === "left" ? "md:flex-row" : "md:flex-row-reverse"} justify-center items-center md:justify-end mb-32`}
+>
+  <div
+    class="w-10/12 md:w-2/3 h-72 md:h-[25rem] lg:h-[30rem] bg-purple-700/65 shadow-lg shadow-purple-600/45 rounded-lg relative md:mx-6"
+  >
+    <img
+      src={image}
+      alt={title}
+      class={`absolute w-full h-72 md:h-[25rem] lg:h-[30rem] bg-slate-500/65 backdrop-blur-xl rounded-lg top-2 left-2 transform transition delay-75 ${side === "left" ? "hover:rotate-6" : "hover:-rotate-6 -right-1"} hover:cursor-pointer`}
+    />
+  </div>
+
+  <div class="w-full flex flex-col items-center justify-center">
+    <h2 class="mt-10 text-xl md:text-2xl font-sans text-center">{title}</h2>
+
+    <div class="bg-slate-900/35 w-11/12 h-full p-3 mt-8 rounded-lg">
+      <p class="text-center md:text-start text-lg md:text-xl">
+        {description}
+      </p>
+    </div>
+
+    <a
+      href={link ?? "#"}
+      class={`mt-2 hover:underline hover:cursor-pointer transform transition duration-300 w-full ${side === "left" ? "text-start ml-20" : "text-end mr-20"} `}
+      >Ver proyecto</a
+    >
+  </div>
+</div>

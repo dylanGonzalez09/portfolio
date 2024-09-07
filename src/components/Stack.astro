@@ -1,0 +1,113 @@
+---
+import {
+  IconBrandNextjs,
+  IconBrandReact,
+  IconBrandMysql,
+  IconBrandTailwind,
+  IconBrandPrisma,
+  IconBrandNodejs,
+  IconBrandAstro,
+} from "@tabler/icons-react";
+
+import Arrow from "./svg/Arrow.astro";
+import Logo from "./Logo.astro";
+import TechIcon from "./svg/TechIcon.astro";
+---
+
+<div class="h-screen relative">
+  <div
+    class="absolute bg-slate-300 border-4 border-purple-700 shadow-lg shadow-purple-700 w-60 h-60 rounded-full bottom-[14rem] left-1/2 transform -translate-x-1/2"
+  >
+  </div>
+  <div
+    class={`absolute bg-purple-700 border-4 border-white w-60 h-60 rounded-full bottom-[14.6rem] left-1/2 transform -translate-x-1/2`}
+  >
+    <Logo
+      classes="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 text-5xl"
+    />
+  </div>
+
+  <!-- Techs -->
+
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[40rem] md:bottom-[41rem] right-[3.5rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandReact
+      stroke={1}
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 text-blue-500 rounded-full"
+    /></TechIcon
+  >
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[37rem] right-[6rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandMysql
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 rounded-full"
+    />
+  </TechIcon>
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[33rem] right-[7.5rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandTailwind
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 rounded-full text-blue-300"
+    />
+  </TechIcon>
+
+  <TechIcon
+    classes="w-14 h-14 md:w-16 md:h-16 bottom-[43rem] -left-[2rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandNextjs
+      stroke={1}
+      className="w-14 h-14 md:w-16 md:h-16 bg-black rounded-full"
+    />
+  </TechIcon>
+
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[40rem] md:bottom-[41rem] left-[3.5rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandPrisma
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 rounded-full"
+    />
+  </TechIcon>
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[37rem] left-[6rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandNodejs
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-green-950"
+    />
+  </TechIcon>
+  <TechIcon
+    classes="w-8 h-8 md:w-12 md:h-12 bottom-[33rem] left-[7.5rem] transform -translate-x-1/2 animate-bounce"
+  >
+    <IconBrandAstro
+      stroke={1}
+      className="w-8 h-8 md:w-12 md:h-12 rounded-full"
+    />
+  </TechIcon>
+
+  <!-- Arrows -->
+
+  <Arrow
+    classes="bottom-[17rem] left-1/2 transform -translate-x-1/2 w-[450px]"
+  />
+  <Arrow
+    classes="bottom-[14rem] -left-10 transform -translate-x-1/2 w-[450px]"
+  />
+  <Arrow
+    classes="bottom-[10rem] -left-16 transform -translate-x-1/2 w-[450px]"
+  />
+
+  <Arrow
+    classes="bottom-[17rem] left-1/2 transform -translate-x-1/2 w-[450px] scale-x-[-1]"
+  />
+  <Arrow
+    classes="bottom-[14rem] left-10 transform -translate-x-1/2 w-[450px] scale-x-[-1]"
+  />
+  <Arrow
+    classes="bottom-[10rem] left-16 transform -translate-x-1/2 w-[450px] scale-x-[-1]"
+  />
+</div>
