@@ -1,41 +1,93 @@
 ---
+import { PillTech } from "./PillTech.tsx";
+
 interface Props {
-  side?: "left" | "right";
+  side: "left" | "right";
   title: string;
   description: string;
   image: string;
-  link?: string;
+  link: string;
+  github: string;
+  techStack: string[];
 }
 
-const { side, title, description, image, link } = Astro.props;
+const { side, title, description, image, link, github, techStack } =
+  Astro.props;
 ---
 
 <div
-  class={`w-full flex flex-col ${side === "left" ? "md:flex-row" : "md:flex-row-reverse"} justify-center items-center md:justify-end mb-32`}
+  class={`w-full flex flex-col ${side === "left" ? "md:flex-row" : "md:flex-row-reverse"} justify-center items-center md:justify-end mb-32 md:max-w-7xl relative`}
 >
   <div
-    class="w-10/12 md:w-2/3 h-72 md:h-[25rem] lg:h-[30rem] bg-purple-700/65 shadow-lg shadow-purple-600/45 rounded-lg relative md:mx-6"
+    class="w-[320px] h-[260px] md:w-[1000px] md:h-[350px] lg:w-[1500px] lg:h-[500px] backdrop-blur-xl bg-slate-400/15 shadow-2xl hover:shadow-purple-400/15 rounded-lg relative md:mx-6"
   >
-    <img
-      src={image}
-      alt={title}
-      class={`absolute w-full h-72 md:h-[25rem] lg:h-[30rem] bg-slate-500/65 backdrop-blur-xl rounded-lg top-2 left-2 transform transition delay-75 ${side === "left" ? "hover:rotate-6" : "hover:-rotate-6 -right-1"} hover:cursor-pointer`}
-    />
+    {
+      link.trim() !== "" ? (
+        <a
+          href={link}
+          target="_blank"
+          class={`mt-2 hover:underline transform transition duration-300 w-full ${side === "left" ? "text-start ml-20" : "text-end mr-20"} `}
+        >
+          <img
+            src={image}
+            alt={title}
+            class={`absolute w-full h-full rounded-lg top-2 left-2 transform transition delay-75 ${side === "left" ? "hover:rotate-6" : "hover:-rotate-6 -right-1"}`}
+          />
+        </a>
+      ) : (
+        <img
+          src={image}
+          alt={title}
+          class={`absolute w-full h-full rounded-lg top-2 left-2 transform transition delay-75 ${side === "left" ? "hover:rotate-6" : "hover:-rotate-6 -right-1"}`}
+        />
+      )
+    }
   </div>
 
   <div class="w-full flex flex-col items-center justify-center">
     <h2 class="mt-10 text-xl md:text-2xl font-sans text-center">{title}</h2>
 
-    <div class="bg-slate-900/35 w-11/12 h-full p-3 mt-8 rounded-lg">
+    {
+      techStack.length > 0 && (
+        <div class="mt-8 flex flex-wrap justify-center items-center w-11/12">
+          {techStack.map((tech) => (
+            <PillTech name={tech} />
+          ))}
+        </div>
+      )
+    }
+
+    <div class="bg-slate-900/50 w-11/12 h-full p-3 mt-8 rounded-lg">
       <p class="text-center md:text-start text-lg md:text-xl">
         {description}
       </p>
     </div>
 
-    <a
-      href={link ?? "#"}
-      class={`mt-2 hover:underline hover:cursor-pointer transform transition duration-300 w-full ${side === "left" ? "text-start ml-20" : "text-end mr-20"} `}
-      >Ver proyecto</a
-    >
+    <div class={`w-11/12 mt-2 text-center`}>
+      <!-- links -->
+      {
+        link.trim() !== "" && (
+          <a
+            href={link}
+            target="_blank"
+            class={`hover:underline transform transition duration-300 text-slate-200/65 mx-4`}
+          >
+            Ir al proyecto
+          </a>
+        )
+      }
+
+      {
+        github.trim() !== "" && (
+          <a
+            href={github}
+            target="_blank"
+            class={`hover:underline transform transition duration-300 text-slate-200/65 mx-4`}
+          >
+            Ir al repositorio
+          </a>
+        )
+      }
+    </div>
   </div>
 </div>

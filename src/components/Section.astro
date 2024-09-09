@@ -2,14 +2,15 @@
 interface Props {
   title: string;
   id: string;
+  classes?: string;
 }
 
-const { title, id } = Astro.props;
+const { title, id, classes } = Astro.props;
 ---
 
 <section
   id={id}
-  class="relative flex flex-col items-center justify-center w-full m-auto overflow-hidden"
+  class={`${classes} relative flex flex-col items-center justify-center w-full m-auto overflow-hidden`}
 >
   <h2 class="mt-40 text-xl md:text-4xl font-sans mb-20">{title}</h2>
   <slot />

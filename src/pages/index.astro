@@ -8,6 +8,7 @@ import Project from "../components/Project.astro";
 import Stack from "../components/Stack.astro";
 
 import { projects } from "../data/projects.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Dylan Gonzalez | Portfolio">
@@ -16,11 +17,16 @@ import { projects } from "../data/projects.astro";
   <main class="mt-16 md:mt-0">
     <Profile />
   </main>
+
   <Section title="Experiencia" id="experience">
     <TimeLine />
   </Section>
 
-  <Section title="Proyectos" id="projects">
+  <Section
+    title="Proyectos"
+    id="projects"
+    classes="bg-gradient-to-r from-neutral-900 to-slate-900"
+  >
     {
       projects.map((project, i) => (
         <Project
@@ -28,6 +34,9 @@ import { projects } from "../data/projects.astro";
           title={project.title}
           description={project.description}
           image={project.image}
+          link={project.link}
+          github={project.github}
+          techStack={project.techStack}
         />
       ))
     }
@@ -35,5 +44,9 @@ import { projects } from "../data/projects.astro";
 
   <Section title="Tecnologías" id="stack">
     <Stack />
+  </Section>
+
+  <Section title="" id="contact">
+    <Footer />
   </Section>
 </Layout>
