@@ -1,0 +1,17 @@
+---
+import { IconBrandGithub } from "@tabler/icons-react";
+
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+---
+
+<a
+  href="https://github.com/dylanGonzalez09"
+  target="_blank"
+  class={`${classes} flex justify-center items-center w-8 h-8 md:w-12 md:h-12 rounded-full text-white bg-gradient-to-br from-slate-600 to-black hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800`}
+>
+  <IconBrandGithub stroke={1} className="w-[90%] h-[90%]" />
+</a>
