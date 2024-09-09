@@ -9,6 +9,9 @@ import {
   IconNfc,
   IconCoffee,
   IconBrandAndroid,
+  IconBrandReact,
+  IconBrandMongodb,
+  IconBrandNodejs,
 } from "@tabler/icons-react";
 
 export const PillTech = ({ name }: { name: string }): React.ReactElement => {
@@ -32,6 +35,12 @@ export const PillTech = ({ name }: { name: string }): React.ReactElement => {
         return <IconNfc stroke={1} width={25} height={25} />;
       case "Java":
         return <IconCoffee stroke={1} width={25} height={25} />;
+      case "React JS":
+        return <IconBrandReact stroke={1} width={25} height={25} />;
+      case "Mongo DB":
+        return <IconBrandMongodb stroke={1} width={25} height={25} />;
+      case "Node JS":
+        return <IconBrandNodejs stroke={1} width={25} height={25} />;
       case "Android Studio":
         return <IconBrandAndroid stroke={1} width={25} height={25} />;
       default:
