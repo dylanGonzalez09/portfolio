@@ -1,9 +1,9 @@
 ---
-import { IconDownload } from "@tabler/icons-react";
-import LinkedIn from "./social/LinkedIn.astro";
-import Instagram from "./social/Instagram.astro";
-import Github from "./social/Github.astro";
-import ContactBtn from "./ContactBtn.astro";
+import { IconDownload } from "@tabler/icons-react"
+import LinkedIn from "./social/LinkedIn.astro"
+import Instagram from "./social/Instagram.astro"
+import Github from "./social/Github.astro"
+import ContactBtn from "./ContactBtn.astro"
 ---
 
 <div
@@ -15,13 +15,13 @@ import ContactBtn from "./ContactBtn.astro";
   </div>
   <div class="md:col-span-2 flex gap-4 flex-col">
     <div class="mx-4 md:mx-0">
-      <h1 class="md:text-3xl text-center md:text-start">
+      <h1 class="md:text-3xl text-center md:text-start text-white">
         Hola soy Dylan <span
           class="inline-block transform transition duration-300 hover:scale-150 hover:-rotate-45 hover:cursor-pointer"
           >🖐️</span
         >😄 <span class="text-green-500/80 font-sans">FullStack Developer</span>
       </h1>
-      <p class="md:text-3xl text-center md:text-start mt-5 md:mt-10">
+      <p class="md:text-3xl text-center md:text-start mt-5 md:mt-10 text-white">
         Me especializo en la creación de soluciones digitales modernas,
         eficientes y escalables, combinando un sólido conocimiento en
         tecnologías frontend y backend con <span
@@ -36,7 +36,7 @@ import ContactBtn from "./ContactBtn.astro";
       />
       <button
         disabled={true}
-        class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl font-bold enabled:hover:bg-green-500/90 transition delay-100"
+        class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl font-bold enabled:hover:bg-green-500/90 transition delay-100 text-white"
       >
         <IconDownload stroke={2} />
         <span>CV</span>
@@ -44,10 +44,12 @@ import ContactBtn from "./ContactBtn.astro";
     </div>
   </div>
   <div class="flex items-center justify-center relative">
-    <img
-      src="/profile.webp"
-      class="bg-slate-900/45 backdrop-blur-md w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full"
-    />
+    <div class="w-[200px] h-[200px] md:w-[300px] md:h-[300px]">
+      <img
+        src="/profile.jpg"
+        class="bg-slate-900/45 backdrop-blur-md rounded-full w-full h-full"
+      />
+    </div>
     <LinkedIn
       classes="absolute -bottom-[calc(10%)] left-[calc(70%)] -translate-y-1/2 transform -translate-x-1/2"
     />

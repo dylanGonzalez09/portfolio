@@ -1,18 +1,17 @@
 ---
-import { PillTech } from "./PillTech.tsx";
+import { PillTech } from "./PillTech.tsx"
 
 interface Props {
-  side: "left" | "right";
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  github: string;
-  techStack: string[];
+  side: "left" | "right"
+  title: string
+  description: string
+  image: string
+  link: string
+  github: string
+  techStack: string[]
 }
 
-const { side, title, description, image, link, github, techStack } =
-  Astro.props;
+const { side, title, description, image, link, github, techStack } = Astro.props
 ---
 
 <div
@@ -45,7 +44,9 @@ const { side, title, description, image, link, github, techStack } =
   </div>
 
   <div class="w-full flex flex-col items-center justify-center">
-    <h2 class="mt-10 text-xl md:text-2xl font-sans text-center">{title}</h2>
+    <h2 class="mt-10 text-xl md:text-2xl font-sans text-center text-white">
+      {title}
+    </h2>
 
     {
       techStack.length > 0 && (
@@ -58,7 +59,7 @@ const { side, title, description, image, link, github, techStack } =
     }
 
     <div class="bg-slate-900/50 w-11/12 h-full p-3 mt-8 rounded-lg">
-      <p class="text-center md:text-start text-lg md:text-xl">
+      <p class="text-center md:text-start text-lg md:text-xl text-white">
         {description}
       </p>
     </div>
