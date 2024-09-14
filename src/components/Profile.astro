@@ -1,9 +1,9 @@
 ---
-import { IconDownload } from "@tabler/icons-react"
-import LinkedIn from "./social/LinkedIn.astro"
-import Instagram from "./social/Instagram.astro"
-import Github from "./social/Github.astro"
-import ContactBtn from "./ContactBtn.astro"
+import { IconDownload } from "@tabler/icons-react";
+import LinkedIn from "./social/LinkedIn.astro";
+import Instagram from "./social/Instagram.astro";
+import Github from "./social/Github.astro";
+import ContactBtn from "./ContactBtn.astro";
 ---
 
 <div
@@ -34,13 +34,14 @@ import ContactBtn from "./ContactBtn.astro"
         title="Contactar"
         classes="w-full gap-2 flex justify-center items-center"
       />
-      <button
-        disabled={true}
-        class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl font-bold enabled:hover:bg-green-500/90 transition delay-100 text-white"
+      <a
+        download="CV-Dylan-Gonzalez.pdf"
+        href="/CV-Dylan-Gonzalez.pdf"
+        class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl hover:cursor-pointer font-bold hover:bg-green-500/90 transition delay-100 text-white"
       >
         <IconDownload stroke={2} />
         <span>CV</span>
-      </button>
+      </a>
     </div>
   </div>
   <div class="flex items-center justify-center relative">
