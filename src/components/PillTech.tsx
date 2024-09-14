@@ -12,7 +12,9 @@ import {
   IconBrandReact,
   IconBrandMongodb,
   IconBrandNodejs,
+  IconBrandDocker,
 } from "@tabler/icons-react";
+import { PostgresqlIcon } from "./PostgresqlIcon";
 
 export const PillTech = ({ name }: { name: string }): React.ReactElement => {
   const setIcon = () => {
@@ -43,6 +45,10 @@ export const PillTech = ({ name }: { name: string }): React.ReactElement => {
         return <IconBrandNodejs stroke={1} width={25} height={25} />;
       case "Android Studio":
         return <IconBrandAndroid stroke={1} width={25} height={25} />;
+      case "Docker":
+        return <IconBrandDocker stroke={1} width={25} height={25} />;
+      case "PostgreSql":
+        return <PostgresqlIcon />;
       default:
         return null;
     }
