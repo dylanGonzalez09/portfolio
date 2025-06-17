@@ -19,6 +19,8 @@ import { PostgresqlIcon } from "./PostgresqlIcon";
 export const PillTech = ({ name }: { name: string }): React.ReactElement => {
   const setIcon = () => {
     switch (name) {
+      case "React Native":
+        return <IconBrandReact stroke={1} width={25} height={25} />;
       case "Next JS":
         return <IconBrandNextjs stroke={1} width={25} height={25} />;
       case "Prisma":
