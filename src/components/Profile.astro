@@ -4,6 +4,11 @@ import LinkedIn from "./social/LinkedIn.astro";
 import Instagram from "./social/Instagram.astro";
 import Github from "./social/Github.astro";
 import ContactBtn from "./ContactBtn.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div
@@ -16,22 +21,19 @@ import ContactBtn from "./ContactBtn.astro";
   <div class="md:col-span-2 flex gap-4 flex-col">
     <div class="mx-4 md:mx-0">
       <h1 class="md:text-3xl text-center md:text-start text-white">
-        Hola soy Dylan <span
+        {t("profile.name")}
+        <span
           class="inline-block transform transition duration-300 hover:scale-150 hover:-rotate-45 hover:cursor-pointer"
           >🖐️</span
-        >😄 <span class="text-green-500/80 font-sans">FullStack Developer</span>
+        >😄 <span class="text-green-500/80 font-sans">{t("profile.post")}</span>
       </h1>
-      <p class="md:text-xl text-center md:text-start mt-5 md:mt-10 text-white">
-        Cuento con <span class="font-bold font-sans text-green-500/80">+4</span>
-        años de experiencia desarrollando software. He tenido la oportunidad de trabajar
-        en un proyecto profesional creando soluciones modernas, eficientes y escalables,
-        combinando un sólido conocimiento en tecnologías frontend y backend con para
-        entregar productos de alta calidad.
+      <p class="md:text-xl text-center md:text-start mt-5 text-white">
+        {t("profile.description")}
       </p>
     </div>
     <div class="flex gap-8 mx-2 md:mx-0">
       <ContactBtn
-        title="Contactar"
+        title={t("profile.contact")}
         classes="w-full gap-2 flex justify-center items-center"
       />
       <a
@@ -40,7 +42,7 @@ import ContactBtn from "./ContactBtn.astro";
         class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl hover:cursor-pointer font-bold hover:bg-green-500/90 transition delay-100 text-white"
       >
         <IconDownload stroke={2} />
-        <span>CV</span>
+        <span>{t("profile.cv")}</span>
       </a>
     </div>
   </div>

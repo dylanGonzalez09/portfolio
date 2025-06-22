@@ -1,5 +1,10 @@
 ---
 import Logo from "./Logo.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <nav
@@ -11,16 +16,16 @@ import Logo from "./Logo.astro";
     class="md:mr-2 flex flex-row justify-center items-center gap-2 md:gap-10 text-center"
   >
     <li class="transform transition duration-300 hover:scale-110 w-full">
-      <a href="#experience" class="md:text-xl">Experiencia</a>
+      <a href="#experience" class="md:text-xl">{t("nav.experience")}</a>
     </li>
     <li class="transform transition duration-300 hover:scale-110 w-full">
-      <a href="#projects" class="md:text-xl">Proyectos</a>
+      <a href="#projects" class="md:text-xl">{t("nav.projects")}</a>
     </li>
     <li class="transform transition duration-300 hover:scale-110 w-full">
-      <a href="#stack" class="md:text-xl">Stack</a>
+      <a href="#stack" class="md:text-xl">{t("nav.stack")}</a>
     </li>
     <li class="transform transition duration-300 hover:scale-110 w-full">
-      <a href="#contact" class="md:text-xl">Contacto</a>
+      <a href="#contact" class="md:text-xl">{t("nav.contact")}</a>
     </li>
   </ul>
 </nav>
