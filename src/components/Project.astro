@@ -1,17 +1,22 @@
 ---
-import { PillTech } from "./PillTech.tsx"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { PillTech } from "./PillTech.tsx";
 
 interface Props {
-  side: "left" | "right"
-  title: string
-  description: string
-  image: string
-  link: string
-  github: string
-  techStack: string[]
+  side: "left" | "right";
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  github: string;
+  techStack: string[];
 }
 
-const { side, title, description, image, link, github, techStack } = Astro.props
+const { side, title, description, image, link, github, techStack } =
+  Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div
@@ -73,7 +78,7 @@ const { side, title, description, image, link, github, techStack } = Astro.props
             target="_blank"
             class={`hover:underline transform transition duration-300 text-slate-200/65 mx-4`}
           >
-            Ir al proyecto
+            {t("project.link")}
           </a>
         )
       }
@@ -85,7 +90,7 @@ const { side, title, description, image, link, github, techStack } = Astro.props
             target="_blank"
             class={`hover:underline transform transition duration-300 text-slate-200/65 mx-4`}
           >
-            Ir al repositorio
+            {t("project.repo")}
           </a>
         )
       }

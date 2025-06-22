@@ -37,8 +37,8 @@ const t = useTranslations(lang);
         classes="w-full gap-2 flex justify-center items-center"
       />
       <a
-        download="CV-Dylan-Gonzalez.pdf"
-        href="/CV-Dylan-Gonzalez.pdf"
+        download={lang === "en" ? "CV-english.pdf" : "CV-spanish.pdf"}
+        href={lang === "en" ? "/CV-english.pdf" : "/CV-spanish.pdf"}
         class="flex justify-center items-center gap-4 bg-green-700 w-full h-12 rounded-lg text-md md:text-xl hover:cursor-pointer font-bold hover:bg-green-500/90 transition delay-100 text-white"
       >
         <IconDownload stroke={2} />

@@ -2,13 +2,14 @@
 import Logo from "./Logo.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguajeSelector from "./LanguajeSelector.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <nav
-  class="bg-slate-900/45 backdrop-blur-md p-3 rounded-xl md:rounded-full fixed left-1/2 transform -translate-x-1/2 text-white flex flex-col md:flex-row items-center justify-center md:justify-between top-8 w-11/12 md:w-[60%] md:max-w-xl overflow-hidden z-50"
+  class="bg-slate-900/45 backdrop-blur-md p-3 rounded-xl md:rounded-full fixed left-1/2 transform -translate-x-1/2 text-white z-50 flex flex-col md:flex-row justify-center items-center mt-8 gap-2"
 >
   <Logo />
 
@@ -28,4 +29,6 @@ const t = useTranslations(lang);
       <a href="#contact" class="md:text-xl">{t("nav.contact")}</a>
     </li>
   </ul>
+
+  <LanguajeSelector />
 </nav>

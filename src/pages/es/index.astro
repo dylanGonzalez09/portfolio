@@ -7,8 +7,14 @@ import TimeLine from "../../components/TimeLine.astro";
 import Project from "../../components/Project.astro";
 import Stack from "../../components/Stack.astro";
 
-import { projects } from "../../data/projects.astro";
+import { projects } from "../../i18n/projects";
 import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projectList = projects[lang];
 ---
 
 <Layout title="Dylan Gonzalez | Portfolio">
@@ -18,17 +24,17 @@ import Footer from "../../components/Footer.astro";
     <Profile />
   </main>
 
-  <Section title="Experiencia Profesional" id="experience">
+  <Section title={t("section.timeline")} id="experience">
     <TimeLine />
   </Section>
 
   <Section
-    title="Mis Proyectos"
+    title={t("section.projects")}
     id="projects"
     classes="bg-gradient-to-r from-neutral-900 to-slate-900"
   >
     {
-      projects.map((project, i) => (
+      projectList.map((project, i) => (
         <Project
           side={i % 2 === 0 ? "left" : "right"}
           title={project.title}

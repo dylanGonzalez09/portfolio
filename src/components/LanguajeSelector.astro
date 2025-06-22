@@ -1,0 +1,32 @@
+<form id="lang-form">
+  <select id="lang-select" class="bg-transparent outline-none md:text-xl">
+    <option value="es" class="text-black">Español</option>
+    <option value="en" class="text-black">English</option>
+  </select>
+</form>
+
+<script>
+  const form = document.getElementById("lang-form");
+  const select = document.getElementById("lang-select") as HTMLSelectElement;
+  const savedLang = localStorage.getItem("lang");
+  const actualLang = window.location.pathname.replaceAll("/", "");
+
+  if (savedLang && select) {
+    if (actualLang !== savedLang) {
+      select.value = actualLang;
+    } else {
+      select.value = savedLang;
+    }
+  }
+
+  form?.addEventListener("change", (e) => {
+    e.preventDefault();
+
+    const selectedLang = select.value;
+
+    // Guardar en localStorage
+    localStorage.setItem("lang", selectedLang);
+    // Redirigir
+    window.location.pathname = `/${selectedLang}`;
+  });
+</script>
